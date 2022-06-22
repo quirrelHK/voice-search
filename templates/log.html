@@ -13,7 +13,7 @@
     <br>
     &nbsp;&nbsp;Description:
     <br>
-    <textarea id="result" name="Program area" rows="35" cols="110">   
+    <textarea id="result" name="Program area" rows="35" cols="110">
        {% for line in b_lines %}
           {{ line }}
        {% endfor %}
@@ -21,7 +21,8 @@
 
     <script>
       function goBack(){
-        location.replace("http://127.0.0.1:5000/")
+        // location.replace("http://127.0.0.1:5000/")
+        location.replace("https://speechenv.herokuapp.com/")
       }
     </script>
 

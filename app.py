@@ -28,7 +28,7 @@ def index():
         "Found": False,
         "Key": None
     }
-    
+
     transcript = ''
 
     if request.method == "POST":
@@ -70,13 +70,13 @@ def index():
                         print("find1")
                         # return find()
 
-            
+
             pattern = re.findall(r"\ba\S+ion\b",transcript)
             if bool(pattern) and pattern[0] in transcript:
                 result['Found'] = True
                 result['Key'] = 'add'
 
-            else:    
+            else:
                 pattern = re.findall(r"\bm\S+ion\b",transcript)
                 if bool(pattern) and pattern[0] in transcript:
                     result['Found'] = True
@@ -109,7 +109,7 @@ def index():
                                         result['Key'] = 'factorial'
 
 
-                    
+
             result['Value'] = transcript
             # if result['Found'] == True:
             with open("key.json", "w") as outfile:
@@ -141,22 +141,18 @@ def find():
         if 'Value' in dict_key.keys():
             value = dict_key['Value']
             print(dict_key['Value'])
-    
+
         
         contents.append(value)
         if findkey in my_keys.keys():
-            contents.clear() 
+            contents.clear()
             with open(f'programs\\{findkey}.txt','r') as f:
-                contents = f.readlines()                
-       
+                contents = f.readlines()
+
 
     return render_template('log.html', b_lines=contents)
     # return jsonify(result)      # returns result but first converts dict() into .json
-    
+
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-           
-
-
