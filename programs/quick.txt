@@ -1,0 +1,31 @@
+class box{
+    private int l,b,h;
+
+    box(){
+        l = b = h = 1;
+    }
+
+    box(int x){
+        l = b = h = x;
+    }
+
+    box(int x, int y, int z){
+        l = x; b = y; h = z;
+    }
+
+    box(box po){
+        l = po.l;
+        b = po.b;
+        h = po.h;
+    }
+}
+
+public class assign3_q1{
+    public static void main(String[] args){
+        box obj1 = new box();
+        box obj2 = new box(69);
+        box obj3 = new box(4,8,9);
+        box obj4 = new box(obj3);
+
+    }
+}

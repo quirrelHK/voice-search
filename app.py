@@ -1,9 +1,7 @@
-from unittest import result
 from flask import Flask
 from flask import request,redirect
 from flask import render_template
-from flask import jsonify
-# import os
+
 import re
 import json
 import speech_recognition as sr
@@ -30,25 +28,15 @@ def index():
         "Found": False,
         "Key": None
     }
-    # if "file" not in request.files:
-    #     return redirect(request.url)
-    transcript = 'a'
+    
+    transcript = ''
 
     if request.method == "POST":
         file = request.files['audio_data']
 
         if file.filename == "":
            return redirect(request.url)
-        # with open('audio.wav', 'wb') as audio:
-            # f.save(audio)
-        # print('file uploaded successfully')
-        # if f:
-        #     r = sr.Recognizer()
-        #     audioFile = sr.AudioFile(f)
-        #     with audioFile as source:
-        #         data = r.record(source)
-        #     transcript = r.recognize_goole(data, key=None)
-        #     print(transcript)
+
         if file:
             print(file)
             try:
@@ -80,7 +68,7 @@ def index():
                         with open("key.json", "w") as outfile:
                             json.dump(result, outfile)
                         print("find1")
-                        return find()
+                        # return find()
 
             
             pattern = re.findall(r"\ba\S+ion\b",transcript)
@@ -127,7 +115,7 @@ def index():
             with open("key.json", "w") as outfile:
                 json.dump(result, outfile)
             print("find2")
-            return find()
+            # return find()
             # print("nan")
             # return jsonify(result)
         return render_template('index.html',transcript = transcript, request="POST")
@@ -135,61 +123,34 @@ def index():
             # return render_template('index.html', words=transcript, request="POST")
         # return render_template('index.html',transcript=transcript, request="POST")
     else:
-        return render_template("index.html",transcript=transcript)
+        return render_template("index.html",transcript=transcript,request="GET")
 
 
 @app.route("/find", methods=['POST',"GET"])
 def find():
 
-    with open('data.json','r') as code_data,open('key.json','r') as key_data:   # file comprehension
+    # with open('data.json','r') as code_data,open('key.json','r') as key_data:   # file comprehension
 
-        dict_code = json.load(code_data)          # converts .json into dict()
+    # with open('key.json','r') as key_data:
+        # dict_code = json.load(code_data)          # converts .json into dict()
+    with open('key.json','r') as key_data:
         dict_key = json.load(key_data)
         value = None
-
+        contents = []
         findkey = dict_key['Key']
         if 'Value' in dict_key.keys():
             value = dict_key['Value']
             print(dict_key['Value'])
     
         
-        result = {
-                "Found": False,
-                "Key": None,
-                "Value": value
-            }
+        contents.append(value)
+        if findkey in my_keys.keys():
+            contents.clear() 
+            with open(f'programs\\{findkey}.txt','r') as f:
+                contents = f.readlines()                
+       
 
-        if findkey in dict_code['sort']:    # if key is found in nested dict()
-            result = {
-                    "Found": True,
-                    "Key": findkey,
-                    "Value": dict_code['sort'].get(findkey)
-                }
-        else:
-                result = {
-            "Found": False,
-            "Key": findkey,
-            "Value": value
-        }
-
-
-
-        if findkey in dict_code.keys():   # if key is found in normal dict()
-            
-            if findkey in dict_code:
-                result = {
-                        "Found": True,
-                        "Key": findkey,
-                        "Value": dict_code.get(findkey)
-                    }
-            else:
-                 result = {
-                "Found": False,
-                "Key": findkey,
-                "Value": value
-            }
-
-    return render_template('index.html',transcript=result['Value'])
+    return render_template('log.html', b_lines=contents)
     # return jsonify(result)      # returns result but first converts dict() into .json
     
 

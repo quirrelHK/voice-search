@@ -11,18 +11,20 @@
     <div id="controls">
      <button id="recordButton">Record</button>
      <button id="pauseButton" disabled>Pause</button>
-     <button id="stopButton" disabled>Stop</button> 
+     <button id="stopButton"disabled>Stop</button> 
     </div>
     <div id="formats">Format: start recording to see sample rate</div>
 
-    <!-- <div id="speechText">speechText
-    function speechText({{transcribe}}){
+    <br>
+    <div>
 
-    }
-    <p>{{transcribe}}</p>
-    </div> -->
-    <div id="speechText"> <h2>fine {{transcript}}</h2></div>
-
+    <button onclick="findPage()">Result</button>
+      <script>
+      function findPage(){
+        location.replace("http://127.0.0.1:5000/find")
+      }
+      </script>
+  </div>
     <!--p><strong>Recordings:</strong></p-->
     <!--ol id="recordingsList"></ol-->
     <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->

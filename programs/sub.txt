@@ -1,0 +1,24 @@
+// in inheritance when obj. of derived class is created then the cons. of super class in called automatically, to initialize its variables the call is from top to bottom
+
+class base{
+    base(){
+        System.out.println("Base cons");
+    }
+}
+
+class d1 extends base{
+    d1(){
+        System.out.println("d1 cons");
+    }
+}
+
+class d2 extends d1{
+    d2(){
+        System.out.println("d2 cons");
+    }
+}
+public class cons_chain {
+    public static void main(String[] args){
+        d2 obj = new d2();
+    }
+}

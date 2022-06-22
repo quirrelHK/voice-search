@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Output</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <h1>Program</h1>
+    <br>
+    <button onclick="goBack()">Back</button>
+
+    <br>
+    &nbsp;&nbsp;Description:
+    <br>
+    <textarea id="result" name="Program area" rows="35" cols="110">   
+       {% for line in b_lines %}
+          {{ line }}
+       {% endfor %}
+    </textarea>
+
+    <script>
+      function goBack(){
+        location.replace("http://127.0.0.1:5000/")
+      }
+    </script>
+
+  </body>
+</html>

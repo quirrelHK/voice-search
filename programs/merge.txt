@@ -1,0 +1,17 @@
+class assign3_q2 {
+    public static void main(String[] args){
+        add(6,9);
+        add(7,7,7);
+        add(55,4,5,5);
+    }
+
+    public static void add(int x, int y){
+        System.out.println("Sum:" + (x+y));
+    }
+    public static void add(int x, int y, int z){
+        System.out.println("Sum:" + (x+y+z));
+    }
+    public static void add(int w, int x, int y, int z){
+        System.out.println("Sum:" + (x+y+z+w));
+    }
+}
