@@ -142,11 +142,11 @@ def find():
             value = dict_key['Value']
             print(dict_key['Value'])
 
-        
+
         contents.append(value)
         if findkey in my_keys.keys():
             contents.clear()
-            with open(f'programs\\{findkey}.txt','r') as f:
+            with open(f'{findkey}.txt','r') as f:
                 contents = f.readlines()
 
 
