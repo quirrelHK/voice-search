@@ -1,89 +1,68 @@
-class box{
-    protected int l,b,h,vol;
-    String newline = System.getProperty("line.separator");
-    public void set(int x, int y, int z){
-        l = x; b = y; h = z;
-        volume();
-    }
+//Using Pointers
+#include <stdio.h>
 
-    
-    public void get(){
-        System.out.println();
-        System.out.println("Lenght: " + l + newline + "Breath: " + b + newline + "Height: " + h + newline + "Volume: " + vol);
-    }
-
-    public void volume(){
-        vol = l*b*h;
-    }
+// This function swaps values pointed by xp and yp
+void swap(int *xp, int *yp)
+{
+	int temp = *xp;
+	*xp = *yp;
+	*yp = temp;
 }
 
-class weight extends box{
-    protected int wt;
-    protected float den;
-    
-    public void set(int x, int y, int z, int u){
-        //l = x; b = y; h = z; wt = u;
-        super.set(x,y,z);
-        wt = u;
-        density();
-    }
-
-    public void get(){
-        System.out.println();
-        //System.out.println("Lenght: " + l + newline + "Breath: " + b + newline + "Height: " + h + newline + "Volume: " + vol);
-        super.get();
-        System.out.println("Weight: " + wt + newline + "Density: " + den);
-    }
-
-    public void density(){
-        super.volume();
-        den = (float)wt/vol;
-        
-    }
+int main()
+{
+	int x, y;
+	printf("Enter Value of x ");
+	scanf("%d", &x);
+	printf("\nEnter Value of y ");
+	scanf("%d", &y);
+	swap(&x, &y);
+	printf("\nAfter Swapping: x = %d, y = %d", x, y);
+	return 0;
 }
 
-class colour extends weight{
-    protected String col;
+/*****************************************************************/
 
-    public void set(int x, int y, int z, int u, String s){
-        
-        //l = x; b = y; h = z; wt = u; col = s;
-        col = s;
-        super.set(x,y,z,u);
-    }
+// Using Refrences
+#include <stdio.h>
 
-    public void get(){
-        System.out.println();
-        //System.out.println("Lenght: " + l + newline + "Breath: " + b + newline + "Height: " + h + newline + "Volume: " + vol);
-        //System.out.println("Weight: " + wt + newline + "Density: " + den + newline + "Colour: " + col);
-        super.get();
-        System.out.println("Colour: " + col);
-    }
+// This function swaps values referred by
+// x and y,
+void swap(int &x, int &y)
+{
+	int temp = x;
+	x = y;
+	y = temp;
 }
 
-public class assign3_q5{
-    public static void main(String[] args){
-        colour obj = new colour();
-
-        obj.set(4,5,6,77,"Teal");
-        obj.volume();
-        obj.density();
-        obj.get();
-        // box obj1 = new box();
-
-        
-
-        // obj1.set(4, 8, 9);
-        // obj1.get();
-
-        // obj = obj1;
-
-       /* weight obj1 = new weight();
-        obj1.set(4,7,8,77);
-        obj1.volume();
-        obj1.density();
-        obj1.get();*/
-
-        
-    }
+int main()
+{
+	int x, y;
+	printf("Enter Value of x ");
+	scanf("%d", &x);
+	printf("\nEnter Value of y ");
+	scanf("%d", &y);
+	swap(x, y);
+	printf("\nAfter Swapping: x = %d, y = %d", x, y);
+	return 0;
 }
+
+/*****************************************************************/
+
+// Without Using a Third Variable
+#include<stdio.h>  
+int main()    
+{    
+int a=10, b=20;      
+printf("Before swap a=%d b=%d",a,b);      
+a=a+b;//a=30 (10+20)    
+b=a-b;//b=10 (30-20)    
+a=a-b;//a=20 (30-10)    
+printf("\nAfter swap a=%d b=%d",a,b);    
+return 0;  
+}   
+
+/*****************************************************************/
+
+
+

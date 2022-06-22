@@ -1,24 +1,19 @@
-// in inheritance when obj. of derived class is created then the cons. of super class in called automatically, to initialize its variables the call is from top to bottom
+#include<stdio.h>
+#include<conio.h>
 
-class base{
-    base(){
-        System.out.println("Base cons");
-    }
+void main(){
+
+int one, two, sub;
+
+printf("Enter first number - ");
+scanf("%d",&one);
+printf("Enter second number - ");
+scanf("%d",&two);
+sub = one - two;
+
+printf("The subtraction of numbers %d and %d is %d",one,two,sub);
+getch();
+
 }
 
-class d1 extends base{
-    d1(){
-        System.out.println("d1 cons");
-    }
-}
-
-class d2 extends d1{
-    d2(){
-        System.out.println("d2 cons");
-    }
-}
-public class cons_chain {
-    public static void main(String[] args){
-        d2 obj = new d2();
-    }
-}
+/*****************************************************************/

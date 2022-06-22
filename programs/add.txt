@@ -1,30 +1,25 @@
+// C program to add two numbers
+#include<stdio.h>
 
-abstract class box{
-    abstract public void set(int x,int y,int z);
-    abstract public void get();
-    abstract public void volume();
+int main()
+{
+	int A, B, sum = 0;
+	
+	// Ask user to enter the two numbers
+	printf("Enter two numbers A and B : \n");
+	
+	// Read two numbers from the user || A = 2, B = 3
+	scanf("%d%d", &A, &B);
+	
+	// Calculate the addition of A and B
+	// using '+' operator
+	sum = A + B;
+	
+	// Print the sum
+	printf("Sum of A and B is: %d", sum);
+	
+	return 0;
 }
 
-class rectangle extends box{
-    protected int l,b,h;
-    public void set(int x, int y, int z){
-        l = x; b = y; h = z;
-    }
-    public void get(){
-        System.out.println(l + " " + b + " " + h);
-    }
 
-    public void volume(){
-        System.out.println(l*b*h);
-    }
-}
-
-public class abstract_class{
-    public static void main(String[] args){
-        rectangle obj = new rectangle();
-        obj.set(5,5,6);
-        obj.get();
-        obj.volume();
-        System.out.println(obj.h);
-    }
-}
+/*****************************************************************/
