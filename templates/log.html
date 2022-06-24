@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <title>Output</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/js/log.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin&family=Work+Sans:wght@500&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@700&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Program</h1>
-    <br>
-    <button onclick="goBack()">Back</button>
+    <h1>Program :-</h1>
+  
+    <button onclick="goBack()" id="btn">Back</button>
 
     <br>
-    &nbsp;&nbsp;Description:
+    &nbsp;&nbsp;
+    <span>Description:</span>  
+
     <br>
-    <textarea id="result" name="Program area" rows="35" cols="110">
+    <textarea id="result" name="Program area" rows="35" cols="110" class="txtarea">
        {% for line in b_lines %}
           {{ line }}
        {% endfor %}
@@ -22,7 +31,7 @@
     <script>
       function goBack(){
         // location.replace("http://127.0.0.1:5000/")
-        location.replace("https://speechenv.herokuapp.com/")
+        location.replace("https://speechto-txt.herokuapp.com/")
       }
     </script>
 

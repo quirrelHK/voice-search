@@ -4,25 +4,47 @@
     <meta charset="UTF-8">
     <title>Program Finder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/js/styles.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@700&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Tinos&family=Zilla+Slab:wght@700&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin&family=Work+Sans:wght@500&display=swap" rel="stylesheet"> 
   </head>
   <body>
     <h1>Search Program Using Voice</h1>
 
     <div id="controls">
-     <button id="recordButton">Record</button>
-     <button id="pauseButton" disabled>Pause</button>
-     <button id="stopButton"disabled>Stop</button>
+     <button id="recordButton" class="button" class="grid" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic-mute" viewBox="0 0 16 16">
+      <path d="M13 8c0 .564-.094 1.107-.266 1.613l-.814-.814A4.02 4.02 0 0 0 12 8V7a.5.5 0 0 1 1 0v1zm-5 4c.818 0 1.578-.245 2.212-.667l.718.719a4.973 4.973 0 0 1-2.43.923V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 1 0v1a4 4 0 0 0 4 4zm3-9v4.879l-1-1V3a2 2 0 0 0-3.997-.118l-.845-.845A3.001 3.001 0 0 1 11 3z"/>
+      <path d="m9.486 10.607-.748-.748A2 2 0 0 1 6 8v-.878l-1-1V8a3 3 0 0 0 4.486 2.607zm-7.84-9.253 12 12 .708-.708-12-12-.708.708z"/>
+    </svg>Record</button>
+     <button id="pauseButton" disabled class="button"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="29" fill="currentColor" class="bi bi-pause-circle" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M5 6.25a1.25 1.25 0 1 1 2.5 
+      0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5z"/>
+    </svg> Pause</button>
+     <button id="stopButton"disabled class="button"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="29" fill="currentColor" class="bi bi-stop-circle" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3z"/>
+    </svg> Stop</button>
     </div>
+    <br>
+    <br>
+    <br>
     <div id="formats">Format: start recording to see sample rate</div>
 
     <br>
     <div>
 
-    <button onclick="findPage()">Result</button>
+    <button onclick="findPage()" class="result">Result</button>
       <script>
       function findPage(){
         // location.replace("http://127.0.0.1:5000/find")
-        location.replace("https://speechenv.herokuapp.com//find")
+        location.replace("https://speechto-txt.herokuapp.com/find")
       }
       </script>
   </div>
@@ -30,6 +52,8 @@
     <!--ol id="recordingsList"></ol-->
     <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
     <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
-    <script src="/static/js/app.js"></script>
+    <script src="/static/js/app.js">    </script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>
 </html>

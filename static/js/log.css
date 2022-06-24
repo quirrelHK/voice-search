@@ -1,0 +1,55 @@
+body
+{font-family: 'Open Sans', sans-serif;
+color: rgb(242, 120, 159);
+background: #3A393B;
+}
+
+.txtarea{
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    background: #F999B7;
+    font-family: 'Open Sans', sans-serif;
+color: black;
+background: #F999B7;
+margin: auto;
+width: 60vw;
+height: 72vh;
+min-height: 60vh;
+border-radius: 0.2rem;
+overflow-y: auto;
+overflow-x: hidden;
+box-shadow: 0px 3px 5px rgba(0,0,0);
+padding-top: 1rem;
+padding-left: 0.5rem;
+padding-right: 0.5rem;
+padding-top: 1rem;
+}
+#btn{
+    background-color: #3A393B;
+border: 2px solid rgb(242, 120, 159);
+color: #ffffff;
+padding: 5px 12px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+transition-duration: 0.4s;
+cursor: pointer;
+border-radius: 8px;
+color: rgb(242, 120, 159);
+font-family: 'Zilla Slab', serif;
+box-shadow: 0px 2px 4px rgb(242, 120, 159);
+margin: 8px 7px;
+font-family: 'Zilla Slab', serif;
+}
+h1{
+    /* font-family: 'Work Sans', sans-serif; */
+    font-family: 'Libre Franklin', sans-serif;
+}
+span{
+
+    /* font-family: 'Libre Franklin', sans-serif; */
+        font-family: 'Work Sans', sans-serif;
+    font-size: 22px;
+}
