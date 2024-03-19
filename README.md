@@ -2,10 +2,16 @@
 
 This project is a web application designed to provide voice search functionality for searching C programs. By utilizing Google's Speech-to-Text API, users can navigate and explore C programs using voice commands, enhancing productivity and saving time.
 
+
+### Home Screen
 ![Home Page](https://github.com/quirrelHK/voice-search/blob/master/media/home_screen.png)
 
+### Results after voice search:
+_c program to add 2 numbers_
 ![Results](https://github.com/quirrelHK/voice-search/blob/master/media/output.png)
 
+### High level overview
+![Overview](https://github.com/quirrelHK/voice-search/blob/master/media/flow_diagram.png)
 
 ## Features
 - **Voice Search:** Users can search for C programs using voice commands.
